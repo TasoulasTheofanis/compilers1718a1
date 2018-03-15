@@ -55,24 +55,17 @@ td = { 'q0':{ '0':'q4','1':'q4','2':'q5', '3':'q1','4':'q1','5':'q1','6':'q1','7
 ad = { 'q6':'TIME_TOKEN', #everything worked fine! YEAAAAAAAA!!!
 	}
 
-
+#PROGRAM STRARTS FROM HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # get a string from input
-text = input('give some input>')
-# scan text until no more input
-while text:	# that is, while len(text)>0
-	
-	# get next token and position after last char recognized
-	token,position = scan(text,td,ad)
-	
-	if token=='ERROR_TOKEN':
-		print("token:",token,"string:",text[:position])
-		print('unrecognized input at pos',position+1,'of',text)
-		print('______________________________________________')
-		break
-	
+text = input('give some input>>')
+
+# get next token and position after last char recognized
+token,position = scan(text,td,ad)
+
+if token=='ERROR_TOKEN':
+	print("token:",token,"string:",text[:position])
+	print('unrecognized input at pos',position+1,'of',text)
+	print('______________________________________________')
+else: 
 	print("token:",token,"string:",text[:position])
 	print('______________________________________________')
-	
-	# remaining text for next scan
-	text = text[position:]
-
